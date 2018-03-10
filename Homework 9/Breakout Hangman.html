@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hangman Game</title>
+    <style type="text/css">
+        
+    </style>
+</head>
+
+<body>
+        <div>
+            <span>Wins: <span id="wins"></span></span><br/>
+            <span>Losses: <span id="losses"></span></span><br/>
+            <button id="start" onclick="start()">Start</button>
+        </div>
+
+    <script type="text/javascript">
+
+        //The plan:  build a hangman game with graphical representation of game state. (show dude hanging)
+        //Scorekeeper for multiple rounds (wins and losses)
+        //gallow base,
+        //gallow vertical,
+        //gallow arm,
+        //gallow down,
+        //head,
+        //torso,
+        //right arm,
+        //left arm,
+        //right leg,
+        //left leg
+        //10 wrong guesses = loss
+
+        //Push to Start
+
+        //Variables for wins and losses
+        let wins = 0;
+        let losses = 0;
+        let started = false; //Is game in progress
+        let guesses = [];
+
+        //Array of words to select from
+        let words =[
+        'maine coon cat',
+        'wet seal',
+        'rocky raccoon',
+        'big moose',
+        'brown horse',
+        'alaskan bear',
+        'pit bull',
+        'scottish terrier'
+        ];
+
+
+         //Start Button & Random selector of word
+
+         function start() {
+
+            document.getElementById('start').disabled = true;
+
+        let word = Math.floor(Math.random()*words.length);
+        
+        for (let i=0; i<word.length; i++){
+
+            if (word[i] === ' '){
+                dashes += '&nbsp;';
+            }else{
+                dashes += '_'
+            }
+            }
+        }
+
+        document.getElementById('wordstage').innerHTML = dashes;
+
+        started = true;
+        }
+       
+        window.addEventListener('keydown', function(event) {
+
+            if (started) {
+
+
+            }
+
+        });
+
+        //Display: game state (dude hanging amount)
+        //Separate images for each stage (array of urls)
+        //Display: underscores for selected word
+        //for loop to display spaces and underscores
+        //Use &nbsp; HTML Entity (special character for spaces instead of underscore)
+        //Display: scoreboard
+        //Get elements by ID and update their innerHTML
+
+
+        //Need:  Keypress guesses (event listeners)
+
+        //Need: Array of previous guesses (no penalty for too many guesses)
+        //Display previous guesses
+
+        //Need: logic to determine if guessed letter is valid
+        //Need: Logic to determine if user has won or lost
+    </script>
+</body>
+
+</html>
